@@ -1,45 +1,75 @@
 <!DOCTYPE html>
 <html>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align:justify ;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 50px;
+  position: relative;
+  left: 45%;
+  top: 200px;
+  
+}
+
+.text1{
+font-size:16px;
+  margin: 4px 2px;
+  width: 280px;
+  height:40px;
+  position: relative;
+  left: 45%;
+  top: 200px;
+
+  }
+
+</style> 
     <head>
         <title>Calculator - Ebraheem</title>
     </head>
     <body>
-        <div id='calc-contain'>
+  <input class="text1" type="text" id="firstname"><br>
+<button class="button button1" onclick="myFunction(1)" >1</button>
+<button class="button button2" onclick="myFunction(2)" >2</button>
+<button class="button button3" onclick="myFunction(3)" >3</button>
+<button class="button button+" onclick="op('+')" >+</button><br>
+<button class="button button4" onclick="myFunction(4)" >4</button>
+<button class="button button5" onclick="myFunction(5)" >5</button>
+<button class="button button6" onclick="myFunction(6)" >6</button>
+<button class="button button-" onclick="op('-')" >-</button><br>
+<button class="button button7" onclick="myFunction(7)" >7</button>
+<button class="button button8" onclick="myFunction(8)" >8</button>
+<button class="button button9" onclick="myFunction(9)" >9</button>
+<button class="button button*" onclick="op('*')" >*</button><br>
+<button class="button button/" onclick="op('/')" >/</button>
+<button class="button button0" onclick="myFunction(0)" >0</button>
+<button class="button buttonc" onclick="clearinput()" >c</button>
+<button class="button button=" onclick="res1()" >=</button>
+
+     <script>
+function myFunction(a) {
+  document.getElementById("firstname").value +=a;
+}
+function op(a) {
+  document.getElementById("firstname").value +=a;
+}
+function clearinput() {
+  document.getElementById("firstname").value= '';
+}
+function res1() {
+var r=document.getElementById("firstname").value;
+  document.getElementById("firstname").value= eval(r);
+}
+
+
+</script>      
   
-          <form name="calculator">
-            
-            <input type="text" name="answer" />
-            <br>
-            
-            <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
-            <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
-            <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
-            <input type="button" value=" + " onclick="calculator.answer.value += '+'" />
-            <br/>
-            
-            <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
-            <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
-            <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
-            <input type="button" value=" - " onclick="calculator.answer.value += '-'" />
-            </br>
-          
-            <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
-            <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
-            <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
-            <input type="button" value=" x " onclick="calculator.answer.value += '*'" />
-            </br>
-        
-            <input type="button" value=" c " onclick="calculator.answer.value = ''" />
-            <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
-            <input type="button" value=" = " onclick="calculator.answer.value = eval(calculator.answer.value)" />
-            <input type="button" value=" / " onclick="calculator.answer.value += '/'" />
-            </br>
-  
-    
-          </form>
-          <div id="agh">
-            <p>Ebraheem Calc
-          </div>
-        </div>
     </body>
 </html>
