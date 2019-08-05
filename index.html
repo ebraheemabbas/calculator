@@ -14,9 +14,13 @@
   cursor: pointer;
   width: 50px;
   position: relative;
-  left: 45%;
-  top: 200px;
+  left: 40%;
+  top: 180px;
   
+  
+}
+.buttonE{
+  background-color: #0055FF; 
 }
 
 .text1{
@@ -25,47 +29,74 @@ font-size:16px;
   width: 280px;
   height:40px;
   position: relative;
-  left: 45%;
-  top: 200px;
+  left: 40%;
+  top: 180px;
 
   }
+  p {
+    color: red;
+  font-size:20px;
+  font-style:italic;
+  font-weight: bold;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+   position: relative;
+  left: 40%;
+  top: 170px;
+
+}
 
 </style> 
     <head>
         <title>Calculator - Ebraheem</title>
     </head>
     <body>
+	<p>Calculator</p>
   <input class="text1" type="text" id="firstname"><br>
-<button class="button button1" onclick="myFunction(1)" >1</button>
-<button class="button button2" onclick="myFunction(2)" >2</button>
-<button class="button button3" onclick="myFunction(3)" >3</button>
+<button class="button button1" onclick="add_numbera(1)" >1</button>
+<button class="button button2" onclick="add_numbera(2)" >2</button>
+<button class="button button3" onclick="add_numbera(3)" >3</button>
 <button class="button button+" onclick="op('+')" >+</button><br>
-<button class="button button4" onclick="myFunction(4)" >4</button>
-<button class="button button5" onclick="myFunction(5)" >5</button>
-<button class="button button6" onclick="myFunction(6)" >6</button>
+<button class="button button4" onclick="add_numbera(4)" >4</button>
+<button class="button button5" onclick="add_numbera(5)" >5</button>
+<button class="button button6" onclick="add_numbera(6)" >6</button>
 <button class="button button-" onclick="op('-')" >-</button><br>
-<button class="button button7" onclick="myFunction(7)" >7</button>
-<button class="button button8" onclick="myFunction(8)" >8</button>
-<button class="button button9" onclick="myFunction(9)" >9</button>
+<button class="button button7" onclick="add_numbera(7)" >7</button>
+<button class="button button8" onclick="add_numbera(8)" >8</button>
+<button class="button button9" onclick="add_numbera(9)" >9</button>
 <button class="button button*" onclick="op('*')" >*</button><br>
 <button class="button button/" onclick="op('/')" >/</button>
-<button class="button button0" onclick="myFunction(0)" >0</button>
+<button class="button button0" onclick="add_numbera(0)" >0</button>
 <button class="button buttonc" onclick="clearinput()" >c</button>
-<button class="button button=" onclick="res1()" >=</button>
+<button class="button buttonE" onclick="res1()" >=</button>
 
      <script>
-function myFunction(a) {
+	 var resshowen = "0";
+
+function add_numbera(a) {
+
+	if(resshowen.localeCompare("1")==0){
+	clearinput();
+	}
+		resshowen="0";
   document.getElementById("firstname").value +=a;
 }
 function op(a) {
+	resshowen="0";
+
   document.getElementById("firstname").value +=a;
 }
 function clearinput() {
+	resshowen="0";
   document.getElementById("firstname").value= '';
 }
 function res1() {
 var r=document.getElementById("firstname").value;
   document.getElementById("firstname").value= eval(r);
+  resshowen="1"
 }
 
 
